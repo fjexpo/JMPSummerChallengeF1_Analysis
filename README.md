@@ -15,7 +15,7 @@
 
 ---
 
-### **Autor: [Tu Nombre] (`fjexpo`)**
+### **Autor: Javier Expósito (`fjexpo`)**
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-fjexpo-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/tu-perfil/)  [![GitHub](https://img.shields.io/badge/GitHub-fjexpo-lightgrey?style=flat&logo=github)](https://github.com/fjexpo)
 
 ---
