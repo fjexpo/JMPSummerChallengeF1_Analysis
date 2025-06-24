@@ -1,0 +1,8 @@
+# requirements.txt
+# Librerías necesarias para ejecutar el análisis del proyecto JMPSummerChallengeF1_Analysis
+
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn

@@ -1,0 +1,67 @@
+﻿Local Here(
+	table1 = Open(
+		"/E:/Portfolio Data Analisis/05 JMP_Summer_Challenge/data/JMPSummerChallengeDataset_Training.jmp"
+	);
+	table1 << Fit Model(
+		Y( :LapTimeSeconds ),
+		Effects(
+			:Driver, :Compound, :Team, :LapsOnStint, :SpeedI1, :SpeedI2, :SpeedFL,
+			:SpeedST
+		),
+		Personality( "Standard Least Squares" ),
+		Emphasis( "Effect Leverage" ),
+		Run(
+			:LapTimeSeconds << {Summary of Fit( 1 ), Analysis of Variance( 1 ),
+			Parameter Estimates( 1 ), Lack of Fit( 0 ), Scaled Estimates( 0 ),
+			Plot Actual by Predicted( 1 ), Plot Regression( 0 ),
+			Plot Residual by Predicted( 1 ), Plot Studentized Residuals( 0 ),
+			Plot Effect Leverage( 1 ), Plot Residual by Normal Quantiles( 0 ),
+			Box Cox Y Transformation( 0 ), Profiler(
+				1,
+				Confidence Intervals( 1 ),
+				Arrange in Rows( 5 ),
+				Reorder X Variables(
+					:Driver, :Compound, :Team, :LapsOnStint, :SpeedI1, :SpeedI2,
+					:SpeedFL, :SpeedST
+				),
+				Term Value(
+					:Driver( "ALO", Lock( 0 ), Show( 1 ) ),
+					:Compound( "MEDIUM", Lock( 0 ), Show( 1 ) ),
+					:Team( "Aston Martin", Lock( 0 ), Show( 1 ) ),
+					:LapsOnStint( 15, Lock( 0 ), Show( 1 ) ),
+					:SpeedI1( 264.364, Lock( 0 ), Show( 1 ) ),
+					:SpeedI2( 271.503, Lock( 0 ), Show( 1 ) ),
+					:SpeedFL( 281.05, Lock( 0 ), Show( 1 ) ),
+					:SpeedST( 260, Lock( 0 ), Show( 1 ) )
+				)
+			)}
+		),
+		SendToReport(
+			Dispatch( {"Prediction Profiler"}, "1", ScaleBox,
+				{Label Row( {Automatic Tick Marks( 1 ), Set Font Size( 7 )} )}
+			),
+			Dispatch( {"Prediction Profiler"}, ".", TextBox,
+				{Set Text( "91,64665" )}
+			),
+			Dispatch( {"Prediction Profiler"}, "", TextBox,
+				{Set Text( "[90,5618, " )}
+			),
+			Dispatch( {"Prediction Profiler"}, "", Text Box( 2 ),
+				{Set Text( "92,73149]" )}
+			),
+			Dispatch( {"Prediction Profiler"}, "", TextEditBox,
+				{Rotate Text( "Left" ), Justify Text( "Center" ), Set Wrap( 80 ),
+				Set Base Font( "Axis Title" )}
+			),
+			Dispatch( {"Prediction Profiler"}, "", Text Box( 3 ),
+				{Text Color( "Red" ), Set Wrap( 80 ), Font Color( 3 )}
+			),
+			Dispatch( {"Prediction Profiler"}, "", Text Box( 4 ),
+				{Text Color( "Blue" ), Font Color( 5 )}
+			),
+			Dispatch( {"Prediction Profiler"}, "", Text Box( 5 ),
+				{Text Color( "Blue" ), Font Color( 5 )}
+			)
+		)
+	);
+)

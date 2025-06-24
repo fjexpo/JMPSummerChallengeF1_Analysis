@@ -1,0 +1,10 @@
+﻿Local Here(
+	table1 = Open(
+		"/E:/Portfolio Data Analisis/05 JMP_Summer_Challenge/data/JMPSummerChallengeDataset_Validation.jmp"
+	);
+	table1 << Bivariate(
+		Y( :LapTimeSeconds ),
+		X( :Predicted LapTimeSeconds ),
+		Fit Line( {Line Color( {212, 73, 88} )} )
+	);
+)
